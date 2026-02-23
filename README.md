@@ -2,111 +2,214 @@
 Study Of For Loop In Python
 
 ## Theory:
-Types of loops: for, while, nested.
-A for loop in Python is a control flow statement that is used to execute a block of code repeatedly for a fixed number of times or over a sequence (such as list, tuple, string, or range).
-The range() function is commonly used with for loop.
-Syntax:
-for variable in range(start, stop, step):
-    statements
-A nested for loop is a loop inside another loop.
-The continue statement skips the current iteration.
-The break statement terminates the loop.
-
+A for loop in Python is used to iterate over a sequence (such as a list, tuple, string, dictionary, set, or range) and execute a block of code repeatedly — once for each item in that sequence.
+The range() function generates a sequence of numbers.
+Break: Stops the loop completely.
+Continue: Skips the current iteration.
+Multiplying two 3x3 Matrix: for i in range(3): # rows of a
+for j in range(3): # rows of b
+for k in range(3):
+result[i][j] += a[i][k] * b[k][j]
+for row in result:
+print(row)
 ## Algorithms:
-A)Print numbers from 1 to 5
+A) Print Numbers from 1 to 5
 
-1)Start
-2)Use for loop from 1 to 5 using range(1,6).
-3)Print value of i.
-4)End
+Start
 
-B)Print even numbers from 2 to 10
+Write a for loop using syntax:
+for i in range(1, 6):
 
-1)Start
-2)Use for loop from 2 to 10 with step 2.
-3)Print each number.
-4)End
+Inside the loop, print the value of i using:
+print(i)
 
-C)Alternative method:
-1)Start
-2)Loop from 1 to 10.
-3)If number is not divisible by 2, use continue.
-4)Else print the number.
-5)End
+End
 
-D)Add first n numbers using for loop
+B) Print Even Numbers from 2 to 10
 
-1)Start
-2)Input value of n from user.
-3)Initialize total = 0.
-4)Loop from 1 to n.
-5)Add each number to total.
-6)Print total.
-7)End
+Start
 
-E)Print a matrix
+Write a for loop with step value 2:
+for i in range(2, 11, 2):
 
-1)Start
-2)Define a 3×3 matrix.
-3)Use nested for loop.
-4)Print each element using indexing.
-5)End
+Print each value of i:
+print(i)
 
-Alternative method:
-1)Start
-2)Iterate directly through each row of matrix.
-3)Print row.
-4)End
+End
 
-F)Multiplication of Two 3×3 Matrices
+C) Alternative Method to Print Even Numbers
 
-1)Start
-2)Define matrix A and B.
-3)Initialize result matrix with zeros.
-4)Use three nested loops.
-5)Multiply corresponding elements and store in result.
-6)Print result matrix.
-7)End
+Start
 
-G)Generate permutations of three numbers
+Use loop from 1 to 10:
+for i in range(1, 11):
 
-1)Start
-2)Define list of three elements.
-3)Use three nested loops.
-4)Check condition that all three elements are different.
-5)Print the permutation.
-6)End
+Check condition:
+if i % 2 != 0:
 
-H)Create patterns using for loop
+If true, skip using:
+continue
 
-Right angle triangle:
-1)Start
-2)Loop from 1 to 9.
-3)Print "* " multiplied by i.
-4)End
+Else print the number:
+print(i)
 
-Reverse triangle:
-1)Start
-2)Loop from 10 to 1 (decreasing).
-3)Print "* " multiplied by i.
-4)End
+End
 
-Pyramid pattern:
-1)Start
-2)Set number of rows.
-3)Loop from 1 to row.
-4)Print spaces and stars accordingly.
-5)End
+D) Add First n Numbers Using for Loop
 
-I)Print all prime numbers in range
+Start
 
-1)Start
-2)Loop from 2 to 50.
-3)For each number, check divisibility from 2 to number-1.
-4)If divisible, break.
-5)Else print the number.
-6)End
+Take input from user:
+n = int(input("Enter value of n: "))
 
+Initialize total:
+total = 0
+
+Use loop from 1 to n:
+for i in range(1, n + 1):
+
+Add each number to total:
+total = total + i
+
+Print total:
+print(total)
+
+End
+
+E) Print a 3×3 Matrix
+
+Start
+
+Define matrix:
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+
+Use nested loop:
+
+for i in range(3):
+    for j in range(3):
+
+Print each element using indexing:
+print(matrix[i][j], end=" ")
+
+End
+
+Alternative Method:
+
+Start
+
+Iterate directly through rows:
+for row in matrix:
+
+Print row:
+print(row)
+
+End
+
+F) Multiplication of Two 3×3 Matrices
+
+Start
+
+Define matrices A and B:
+A = [[...],[...],[...]]
+B = [[...],[...],[...]]
+
+Initialize result matrix with zeros:
+result = [[0,0,0],[0,0,0],[0,0,0]]
+
+Use three nested loops:
+
+for i in range(3):
+    for j in range(3):
+        for k in range(3):
+
+Multiply and store result:
+result[i][j] += A[i][k] * B[k][j]
+
+Print result matrix
+
+End
+
+G) Generate Permutations of Three Numbers
+
+Start
+
+Define list:
+nums = [1,2,3]
+
+Use three nested loops:
+
+for i in nums:
+    for j in nums:
+        for k in nums:
+
+Check condition:
+if i != j and j != k and i != k:
+
+Print permutation:
+print(i, j, k)
+
+End
+
+H) Create Patterns Using for Loop
+1) Right Angle Triangle
+
+Start
+
+Loop from 1 to 9:
+for i in range(1, 10):
+
+Print pattern:
+print("* " * i)
+
+End
+
+2) Reverse Triangle
+
+Start
+
+Loop from 10 to 1:
+for i in range(10, 0, -1):
+
+Print pattern:
+print("* " * i)
+
+End
+
+3) Pyramid Pattern
+
+Start
+
+Set number of rows:
+rows = 5
+
+Loop from 1 to rows:
+for i in range(1, rows + 1):
+
+Print spaces and stars:
+print(" " * (rows - i) + "* " * i)
+
+End
+
+I) Print All Prime Numbers in Range 2 to 50
+
+Start
+
+Loop from 2 to 50:
+for num in range(2, 51):
+
+For each number, check divisibility:
+
+for i in range(2, num):
+
+If divisible (num % i == 0), use:
+break
+
+Else (if loop completes), print number using:
+
+else:
+    print(num)
+
+End
 Conclusion:
 
 Hence for loop was successfully studied in Python and different operations were performed using it.
